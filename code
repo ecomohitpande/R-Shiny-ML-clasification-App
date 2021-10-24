@@ -1,0 +1,63 @@
+library(shiny)
+library(shinydashboard)
+
+ui<- dashboardPage(
+  dashboardHeader(title = "My Dashboard"),
+  dashboardSidebar(),
+  dashboardBody(
+    box(plotOutput("correl"), width= 8),
+    box(
+      selectInput("features", "Model Selection :",
+                  c("Sepal.Length", "Sepal.Width", "Petal.Length")), width = 4
+    )
+  )
+)
+server<-function(input, output){
+  output$correl<- renderPlot({
+    barplot(iris$Sepal.Length, iris[[input$features]],
+         xlab = "sepal lenght", ylab = "Feature")
+  })  
+}
+
+
+shinyApp(ui, server)
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ with two page 
+
+
+ui<- dashboardPage(
+      dashboardHeader(title = "Scootty"),
+      dashboardSidebar(
+        sidebarMenu(
+          menuItem("Iris", tabName = "iris", icon = icon("tree")),
+          menuItem("Cars", tabName = "cars", icon = icon("car"))
+        )
+      ),
+      dashboardBody(
+        tabItems(
+        tabItem("iris",
+        box(plotOutput("correlation"), width = 7),
+        box(
+          selectInput("features", "Model Selection:",
+                      c("Sepal.Length", "Sepal.Width", "Petal.Length")), width = 4
+        )),          
+        tabItem("cars",
+                fluidPage(
+                  h1("cars"),
+                  dataTableOutput("carstable")
+                )
+        
+        ))))
+
+
+server<- function(input, output){
+  output$correlation<- renderPlot({
+    barplot(iris$Sepal.Length, iris[[input$features]])})
+  
+  output$carstable<- renderDataTable(mtcars)
+      }
+
+shinyApp(ui, server)
+
+head(iris)
