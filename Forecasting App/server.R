@@ -1,3 +1,10 @@
+library(shiny)
+library(data.table)
+library(randomForest)
+
+# Read in the RF model
+model <- readRDS("model.rds")
+
 server<- function(input, output, session) {
   
   # Input Data
