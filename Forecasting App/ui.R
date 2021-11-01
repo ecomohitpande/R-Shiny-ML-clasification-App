@@ -4,27 +4,27 @@ library(shiny)
 TrainSet <- read.csv("training.csv", header = TRUE)
 TrainSet <- TrainSet[,-1]
 
- pageWithSidebar(
+pageWithSidebar(
   
   # Page header
-  headerPanel('Iris Predictor'),
+  headerPanel('Credit Default'),
   
   # Input values
   sidebarPanel(
     #HTML("<h3>Input parameters</h3>"),
     tags$label(h3('Input parameters')),
-    numericInput("Sepal.Length", 
-                 label = "Sepal Length", 
-                 value = 5.1),
-    numericInput("Sepal.Width", 
-                 label = "Sepal Width", 
-                 value = 3.6),
-    numericInput("Petal.Length", 
-                 label = "Petal Length", 
-                 value = 1.4),
-    numericInput("Petal.Width", 
-                 label = "Petal Width", 
-                 value = 0.2),
+    numericInput("Education", 
+                 label = "Education", 
+                 value = 1),
+    numericInput("Marriage", 
+                 label = "Marriage", 
+                 value = 2),
+    numericInput("Age", 
+                 label = "Age", 
+                 value = 24),
+    numericInput("BILL", 
+                 label = "BILL", 
+                 value = 3913),
     
     actionButton("submitbutton", "Submit", 
                  class = "btn btn-primary")
@@ -37,3 +37,5 @@ TrainSet <- TrainSet[,-1]
     
   )
 )
+
+
