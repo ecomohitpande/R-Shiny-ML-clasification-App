@@ -11,9 +11,9 @@ shinyServer(function(input, output, session) {
     
     df <- data.frame(
       Name = c("Education",
-               "Marital Status",
+               "Marital.Status",
                "Age",
-               "BILL Amount"),
+               "BILL.Amount"),
       Value = as.character(c(input$Education,
                              input$Marriage,
                              input$Age,
