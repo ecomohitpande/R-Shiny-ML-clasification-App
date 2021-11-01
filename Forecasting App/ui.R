@@ -7,7 +7,7 @@ TrainSet <- TrainSet[,-1]
 pageWithSidebar(
   
   # Page header
-  headerPanel('Credit Default'),
+  headerPanel('Credit Default App'),
   
   # Input values
   sidebarPanel(
