@@ -14,7 +14,7 @@ pageWithSidebar(
     #HTML("<h3>Input parameters</h3>"),
     tags$label(h3('Input parameters')),
     numericInput("Education", 
-                 label = "Education", 
+                 label = "Education [Higher Education - 1, Secondary Education - 2, Graduate - 3, Master - 4]", 
                  value = 1),
     numericInput("Marriage", 
                  label = "Marital Status
