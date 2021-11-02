@@ -21,10 +21,10 @@ pageWithSidebar(
                           [Gender Code 0 Female, 1 Male]", 
                  value = 2),
     numericInput("Age", 
-                 label = "Age", 
+                 label = "Age [Max 57, Min 23]", 
                  value = 24),
     numericInput("BILL", 
-                 label = "BILL Amount", 
+                 label = "BILL Amount [Max 367965,  Min 0]", 
                  value = 3913),
     
     actionButton("submitbutton", "Submit", 
