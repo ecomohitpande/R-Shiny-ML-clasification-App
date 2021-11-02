@@ -18,7 +18,7 @@ pageWithSidebar(
                  value = 1),
     numericInput("Marriage", 
                  label = "Marital Status
-                          Gender Code 0 Female, 1 Male", 
+                          [Gender Code 0 Female, 1 Male"], 
                  value = 2),
     numericInput("Age", 
                  label = "Age", 
