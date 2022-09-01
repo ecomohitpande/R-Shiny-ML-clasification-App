@@ -4,7 +4,7 @@
 #
 
 
-my_packages = c("shiny", "data.table","leaflet","DT","shinyWidgets","dplyr", "plotly", "lubridate", "shinycssloaders", "ggplot2", "shinydashboard", "webshot")
+my_packages = c("randomForest", "data.table")
 
 install_if_missing = function(p) {
   if (p %in% rownames(installed.packages()) == FALSE) {
